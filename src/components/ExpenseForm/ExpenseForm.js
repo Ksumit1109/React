@@ -1,26 +1,34 @@
-import React from 'react';
+import React, {useState} from 'react';
+let submitbtn;
+const ExpenseForm=()=>{
+    const [title,setTitle] = useState('');
+    const titleChng = (event)=>{
+        setTitle(event.target.value);
+    }
+   
+    const [amount,setAmt] = useState('')
+    const amtChng = (event)=>{
+        setAmt(event.target.value)
+    }
 
-const expenseForm=()=>{
-    const InputChng = (event)=>{
-        const Value = event.target.value;
-        console.log(Value)
+    const [date,setDate] = useState('');
+    const dateChng = (event)=>{
+        setDate(event.target.value)
     }
-    const ResetValue =(event)=>{
-        event.preventDefault()
-    }
+
     return(
         <div>
             <form id="Form">
                 <label class="Title">Title</label>
-                <input type="text" onChange={InputChng}/>
+                <input type="text" onChange={titleChng}/>
                 <label class="Amount">Amount</label>
-                <input type="text" onChange={InputChng}/>
+                <input type="text" onChange={amtChng}/>
                 <label class="Date">Date</label>
-                <input type="date" onChange={InputChng}/>
+                <input type="date" onChange={dateChng}/>
             </form>
-            <button onSubmit={ResetValue}>Submit</button>
+            <button onClick={submitbtn}>Submit</button>
         </div>
     )
 }
 
-export default expenseForm
+export default ExpenseForm
