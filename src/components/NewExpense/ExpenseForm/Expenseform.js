@@ -70,19 +70,19 @@ const Expenseform = (props) => {
     //     console.log(userInput); // Log the user input to the console
     // };
     return (
-        <form id="Form"  onSubmit={submitHandler}>
+        <form id="Form" onSubmit={submitHandler}>
             <div className='new-expense__controls'>
                 <div className='new-expense__control'>
                     <label className="Title">Title</label>
-                    <input type="text" value={enteredTitle} onChange={titleChng} />
+                    <input type="text" value={enteredTitle} required onChange={titleChng} />
                 </div>
                 <div className='new-expense__control'>
                     <label className="Amount">Amount</label>
-                    <input type="text"  value={enteredAmt} onChange={amtChng} />
+                    <input type="number"  value={enteredAmt} required onChange={amtChng} />
                 </div>
                 <div className='new-expense__control'>
                     <label className="Date">Date</label>
-                    <input type="date" value={enteredDate} onChange={dateChng} />
+                    <input type="date" value={enteredDate} required onChange={dateChng} />
                 </div>
             </div>
                 <div className='new-expense__actions'>
