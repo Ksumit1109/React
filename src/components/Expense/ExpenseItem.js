@@ -20,7 +20,6 @@ const ExpenseItem = (props) => {
         <h2>{props.item.title}</h2>
         <div className="expense-item__price me-1">${props.item.price}</div>
       </div>
-
       <button onClick={deleteBtn}>Remove</button>
     </div>
   );
